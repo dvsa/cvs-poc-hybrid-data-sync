@@ -64,14 +64,11 @@ export class AppModule {
       }),
       new ApolloLink((operation, forward) => {
         operation.setContext({
-          headers: new HttpHeaders().set('x-api-key', 'da2-reoqzrlb2jai7lyuno64gwqmxm')
+          headers: new HttpHeaders().set('x-api-key', config.aws.graphQLApiKey)
         })
-        // operation.setContext(({ headers }) => ({
-        //   headers: headers.append('x-api-key', 'da2-reoqzrlb2jai7lyuno64gwqmxm'),
-        // }))
         return forward(operation);
       }),
-      httpLink.create({ uri: "https://h63q3ct47fhkhjebysdixqo7wq.appsync-api.eu-west-1.amazonaws.com/graphql" })
+      httpLink.create({ uri: config.aws.graphQLUrl })
     ]);
 
     apollo.create({
