@@ -1,3 +1,4 @@
+**This repository is no longer maintained**
 # CVS - PoC Hybrid Data Sync
 This PoC has been created to validate some scenarios around offline working.  It uses AWS AppSync as the backend graphql API and Apollo as the client.
 
